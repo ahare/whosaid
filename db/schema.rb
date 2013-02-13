@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130213022217) do
     t.string   "password"
     t.string   "password_salt"
     t.string   "password_confirmation"
+    t.string   "persistence_token"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end

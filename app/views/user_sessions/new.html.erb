@@ -1,0 +1,9 @@
+<%= simple_form_for @user_session, html: { class: "form-horizontal" } do |f| %>
+
+  <%= f.input :email, placeholder: "Email" %>
+  <%= f.input :password, placeholder: "Password" %>
+  <%= f.input :remember_me, as: :boolean, inline_label: "Remember me on this computer" %>
+
+  <%= f.submit "Login" %>
+
+<% end %>
