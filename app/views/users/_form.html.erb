@@ -1,0 +1,6 @@
+<%= simple_form_for User.new do |f| %>
+  <%= f.input_field :email, placeholder: "Email", class: "span3" %><br/>
+  <%= f.input_field :password, placeholder: "Password", class: "span3" %><br/>
+  <%= f.input_field :password_confirmation, placeholder: "Confirm Password", class: "span3" %><br/>
+  <%= f.submit "Create Your Account", class: "btn btn-primary" %>
+<% end %>

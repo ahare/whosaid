@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      redirect_to(session[:return_to] || root_path)
+      redirect_to phrases_path
     else
       render action: :new
     end

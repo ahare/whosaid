@@ -5,7 +5,7 @@ gem "rails", "3.2.11"
 gem "pg"
 gem "simple_form"
 gem "authlogic"
-gem "settingslogic"
+gem "gotcha"
 
 group :assets do
   gem "coffee-rails", "~> 3.2.1"
@@ -25,6 +25,7 @@ group :test, :development do
   gem "spork"
   gem "email_spec"
   gem "faker"
+  gem "populator"
 end
 
 group :development do

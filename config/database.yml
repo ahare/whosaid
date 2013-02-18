@@ -1,20 +1,14 @@
 development:
-  adapter: postgresql
-  host: localhost
-  encoding: unicode
-  database: whosaid_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
-  username: <%= `whoami`.chomp %>
-  password:
+  timeout: 5000
 
 test:
-  adapter: postgresql
-  host: localhost
-  encoding: unicode
-  database: whosaid_test
+  adapter: sqlite3
+  database: db/test.sqlite3
   pool: 5
-  username: <%= `whoami`.chomp %>
-  password:
+  timeout: 5000
 
 production:
   adapter: postgresql

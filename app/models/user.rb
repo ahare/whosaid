@@ -5,4 +5,11 @@ class User < ActiveRecord::Base
 
   validates_presence_of :email
   validates_uniqueness_of :email
+
+  has_many :phrases, foreign_key: :owner_id
+  has_many :speakers, foreign_key: :owner_id
+
+  def admin?
+    true
+  end
 end
