@@ -5,12 +5,18 @@
       <%= link_to "Who Said", root_path, class: "brand" %>
 
       <% if current_user %>
+        <ul class="nav">
+          <li <% if request.path == phrases_path%> class="active"<% end %>>
+            <%= link_to "Phrases", phrases_path %>
+          </li>
+          <li><a href="#">Kids</a></li>
+        </ul>
+
         <form class="navbar-form pull-right form-search">
-          <input type="text" class="input search-query">
-          <button type="submit" class="btn btn-success">Search</button>
+          <input type="text" class="input" placeholder="Search...">
         </form>
       <% else %>
-        <%= simple_form_for UserSession.new, html: { class: "navbar-form pull-right" } do |f| %>
+        <%= simple_form_for UserSession.new, remote: true, html: { class: "navbar-form pull-right" } do |f| %>
           <%= f.input_field :email, placeholder: "Email", class: "span2" %>
           <%= f.input_field :password, placeholder: "Password", class: "span2" %>
           <%= f.submit "Login", class: "btn btn-primary" %>

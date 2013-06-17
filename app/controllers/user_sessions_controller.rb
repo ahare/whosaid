@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       redirect_to phrases_path
     else
-      render action: :new
+      render json: "error"
     end
   end
 

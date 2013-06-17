@@ -1,27 +1,26 @@
 <div class="well">
-  <h5>Add a new phrase:</h5>
-  <%= simple_form_for Phrase.new, html: { class: "form-inline" } do |f| %>
+  <%= simple_form_for Phrase.new, remote: true, html: { class: "form-inline" } do |f| %>
 
-    <%= f.input :text, 
-        as: :string, 
-        placeholder: "Who", 
+    <%= f.input_field :text,
+        as: :string,
+        placeholder: "Who",
         label: false,
-        input_html: { class: "input-small", data: { source: Speaker.all.map(&:name), provide: "typeahead" } } %>
+        class: "input-small",
+        data: {
+          source: Speaker.all.map(&:name),
+          provide: "typeahead"
+        } %>
 
-    <%= f.input :text, as: :string, placeholder: "What", label: false, html_input: { class: "input-small" } %>
+    said
 
-    <%= f.submit "Save" %>
+    <%= f.input_field :text,
+      as: :string,
+      placeholder: "what?",
+      label: false %>
+
+    <%= f.submit "Save", class: "btn" %>
 
   <% end %>
-
-  <form class="form-inline">
-    <input type="text" class="input-small" placeholder="Email">
-    <input type="password" class="input-small" placeholder="Password">
-    <label class="checkbox">
-      <input type="checkbox"> Remember me
-    </label>
-    <button type="submit" class="btn">Sign in</button>
-  </form>
 </div>
 
 <table class="table table-condensed">
